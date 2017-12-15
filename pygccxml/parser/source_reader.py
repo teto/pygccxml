@@ -110,9 +110,9 @@ class source_reader_t(object):
         cmd = self.__create_command_line_common()
 
         # Clang option: -c Only run preprocess, compile, and assemble steps
-        cmd.append("-c")
+        # cmd.append("-c")
         # Clang option: make sure clang knows we want to parse c++
-        cmd.append("-x c++")
+        # cmd.append("-x c++")
 
         # Always require a compiler path at this point
         if self.__config.compiler_path is None:
@@ -138,7 +138,7 @@ class source_reader_t(object):
         else:
 
             # On mac or linux, use gcc or clang (the flag is the same)
-            cmd.append('--castxml-cc-gnu ')
+            # cmd.append('--castxml-cc-gnu ')
 
             if self.__cxx_std.is_implicit:
                 std_flag = ''

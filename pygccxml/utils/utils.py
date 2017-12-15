@@ -283,6 +283,8 @@ class cxx_standard(object):
     """
 
     __STD_CXX = {
+            # not really c++ but hey
+        '-std=c99': 199711,
         '-std=c++98': 199711,
         '-std=gnu++98': 199711,
         '-std=c++03': 199711,
@@ -310,8 +312,11 @@ class cxx_standard(object):
 
         self._stdcxx = None
         self._is_implicit = False
+        print(cflags)
         for key in cxx_standard.__STD_CXX:
             if key in cflags:
+
+                print("testing against %s" % key)
                 self._stdcxx = key
                 self._cplusplus = cxx_standard.__STD_CXX[key]
 
